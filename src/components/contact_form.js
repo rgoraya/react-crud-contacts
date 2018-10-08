@@ -222,7 +222,7 @@ class ContactForm extends Component {
       };
     }
 
-    // Mark the erronous fields as such
+    // Mark the erronous fields as such 
     if (!input_is_valid && error.length) {
       $input.nextElementSibling.innerHTML = error;
       $input.classList.add('is-invalid');
