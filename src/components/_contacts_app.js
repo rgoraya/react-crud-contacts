@@ -1,9 +1,4 @@
-import React, { Component } from 'react';
-import './App.css';
-import Header from './components/header.js'
-import Body from './components/body.js'
-
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props)
   
@@ -17,7 +12,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://www.ramindergoraya.com/api/v1/user_contacts.json')
+    fetch('ramindergoraya.com/api/v1/user_contacts.json')
     .then((contacts) => 
       contacts.json()
     ).then((contacts) => {
@@ -31,7 +26,7 @@ class App extends Component {
       <div className="row">
         <div className="col-md-4 mx-auto bg-dark text-light p-0 card">
           <div className="card-header shadow"> 
-            <Header 
+            <ContactsHeader 
               view={this.state.view}
               selectedContact={this.state.selectedContact}
               onHeaderViewChange={ view => {this.setState({view})} }
@@ -40,7 +35,7 @@ class App extends Component {
           </div>
           <div className="card-body px-0 pb-0">
             {this.state.contacts.length ? (
-              <Body 
+              <ContactsBody 
                 view={this.state.view} 
                 contacts={this.state.contacts} 
                 selectedContact={this.state.selectedContact}
@@ -67,7 +62,7 @@ class App extends Component {
     
   searchContacts(searchStr) {
     this.setState({loading: true})
-    fetch(`http://www.ramindergoraya.com/api/v1/user_contacts.json?search=${searchStr}`)
+    fetch(`ramindergoraya.com/api/v1/user_contacts.json?search=${searchStr}`)
     .then((contacts) => 
       contacts.json()
     ).then((contacts) => {
@@ -75,5 +70,3 @@ class App extends Component {
     })    
   }
 }
-
-export default App;
