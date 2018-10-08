@@ -235,17 +235,17 @@ class ContactForm extends Component {
       case "new":
         return {
           method: "POST",
-          url: "http://www.ramindergoraya.com/api/v1/user_contacts"
+          url: "https://www.ramindergoraya.com/api/v1/user_contacts"
         }
       case "edit":
         return {
           method: "PUT",
-          url: `http://www.ramindergoraya.com/api/v1/user_contacts/${this.props.contact.id}`
+          url: `https://www.ramindergoraya.com/api/v1/user_contacts/${this.props.contact.id}`
         }
       default:
         return {
           method: "POST",
-          url: "http://www.ramindergoraya.com/api/v1/user_contacts"
+          url: "https://www.ramindergoraya.com/api/v1/user_contacts"
         }
     } 
   }

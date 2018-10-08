@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://www.ramindergoraya.com/api/v1/user_contacts.json')
+    fetch('https://www.ramindergoraya.com/api/v1/user_contacts.json')
     .then((contacts) => 
       contacts.json()
     ).then((contacts) => {
@@ -67,7 +67,7 @@ class App extends Component {
     
   searchContacts(searchStr) {
     this.setState({loading: true})
-    fetch(`http://www.ramindergoraya.com/api/v1/user_contacts.json?search=${searchStr}`)
+    fetch(`https://www.ramindergoraya.com/api/v1/user_contacts.json?search=${searchStr}`)
     .then((contacts) => 
       contacts.json()
     ).then((contacts) => {
